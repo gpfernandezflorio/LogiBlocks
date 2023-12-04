@@ -128,12 +128,18 @@ PrologParser.DynamicFieldTextInput.prototype.checkForValidConstant = function (t
             errors.push('MISSING_APOSTROPHE');
         }
     }
+    const replace_dict = {
+        255:97, 233:101, 237:105, 243:111, 250:117, 241:110
+    };
 
     function checkForValidCharacters(s) {
         let onlyCharacters = true;
         let onlySpecialCharacters = true;
         for (let i = s.length - 1; i >= 0; i--) {
-            const d = s.charCodeAt(i);
+            let d = s.charCodeAt(i);
+            if (d in replace_dict) {
+                d = replace_dict[d];
+            }
             if(d < 65 || (d > 90 && d < 97) || d > 122) {
                 // Falls der aktuelle Char KEIN Buchstabe ist ...
                 if (d !== 95) {

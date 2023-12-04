@@ -178,7 +178,7 @@ PrologParser.initSplitJS = function() {
             //Custom Gutter (Eingabe)
             let gut = document.createElement('div');
             gut.id = (i === 1) ? 'input-tag' : 'output-tag';
-            gut.innerText = (i === 1) ? 'Abfrage' : 'Ausgabe';
+            gut.innerText = (i === 1) ? 'Consulta' : 'Producción';
             gut.className = `gutter gutter-${gutterDirection}`;
             return gut
         },

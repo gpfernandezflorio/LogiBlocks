@@ -7,7 +7,7 @@ goog.provide('PrologParser.EXAMPLES');
 
 PrologParser.EXAMPLES = [];
 
-PrologParser.EXAMPLES['Großvater-Regel'] = "<xml xmlns=\"https://developers.google.com/blockly/xml\">\n" +
+PrologParser.EXAMPLES['Regla del abuelo'] = "<xml xmlns=\"https://developers.google.com/blockly/xml\">\n" +
     "  <block type=\"prolog_fact\" id=\"P*?W@(#?abJ$JrnLijP}\" x=\"110\" y=\"70\">\n" +
     "    <value name=\"PREDICATE\">\n" +
     "      <block type=\"prolog_predicate\" id=\"0,D|gD)vISHu+mC0(X]J\">\n" +
@@ -166,7 +166,7 @@ PrologParser.EXAMPLES['Großvater-Regel'] = "<xml xmlns=\"https://developers.goo
     "  </block>\n" +
     "</xml>";
 
-PrologParser.EXAMPLES['Member-Regel'] = "<xml xmlns=\"https://developers.google.com/blockly/xml\">\n" +
+PrologParser.EXAMPLES['Regla del miembro'] = "<xml xmlns=\"https://developers.google.com/blockly/xml\">\n" +
     "  <block type=\"prolog_fact\" id=\"ystw0v@@2l)$yqd^9`I7\" x=\"110\" y=\"90\">\n" +
     "    <value name=\"PREDICATE\">\n" +
     "      <block type=\"prolog_predicate\" id=\"W*}49o=:=xI[-y2niLoi\">\n" +
@@ -316,7 +316,7 @@ PrologParser.EXAMPLES['Member-Regel'] = "<xml xmlns=\"https://developers.google.
     "  </block>\n" +
     "</xml>";
 
-PrologParser.EXAMPLES['Negier-Funktion'] = "<xml xmlns=\"https://developers.google.com/blockly/xml\">\n" +
+PrologParser.EXAMPLES['Función de negación'] = "<xml xmlns=\"https://developers.google.com/blockly/xml\">\n" +
     "  <block type=\"prolog_rule\" id=\"=%C@y0~1tkBm8JUPAaI.\" x=\"250\" y=\"110\">\n" +
     "    <comment pinned=\"false\" h=\"80\" w=\"160\">neg(A) ist dann erfolgreich, wenn die Ausführung von A scheitert.</comment>\n" +
     "    <statement name=\"INPUT_HEAD\">\n" +
@@ -513,7 +513,7 @@ PrologParser.EXAMPLES['Negier-Funktion'] = "<xml xmlns=\"https://developers.goog
     "  </block>\n" +
     "</xml>";
 
-PrologParser.EXAMPLES['Powerset-Funktion'] = "<xml xmlns=\"https://developers.google.com/blockly/xml\">\n" +
+PrologParser.EXAMPLES['Función de conjunto de energía'] = "<xml xmlns=\"https://developers.google.com/blockly/xml\">\n" +
     "  <block type=\"prolog_fact\" id=\"!wjK,ry{3Wm!AY/lW-7?\" collapsed=\"true\" x=\"130\" y=\"50\">\n" +
     "    <value name=\"PREDICATE\">\n" +
     "      <block type=\"prolog_predicate\" id=\"S`]q64c8|@rdr}xPHkcA\">\n" +
@@ -727,7 +727,7 @@ PrologParser.EXAMPLES['Powerset-Funktion'] = "<xml xmlns=\"https://developers.go
     "  </block>\n" +
     "</xml>";
 
-PrologParser.EXAMPLES['Listenlängen'] = "<xml xmlns=\"https://developers.google.com/blockly/xml\">\n" +
+PrologParser.EXAMPLES['Longitudes de lista'] = "<xml xmlns=\"https://developers.google.com/blockly/xml\">\n" +
     "  <block type=\"prolog_fact\" id=\"=_xZM9gqqw%Z@GohaEDq\" x=\"30\" y=\"10\">\n" +
     "    <value name=\"PREDICATE\">\n" +
     "      <block type=\"prolog_predicate\" id=\"KpOu+i[(y98I_*.uf;9B\">\n" +
@@ -912,7 +912,7 @@ PrologParser.EXAMPLES['Listenlängen'] = "<xml xmlns=\"https://developers.google
     "  </block>\n" +
     "</xml>";
 
-PrologParser.EXAMPLES['Listen-Verkettung'] = "<xml xmlns=\"https://developers.google.com/blockly/xml\">\n" +
+PrologParser.EXAMPLES['Concatenación de listas'] = "<xml xmlns=\"https://developers.google.com/blockly/xml\">\n" +
     "  <block type=\"prolog_fact\" id=\"$0GB168}0z$mJ%DKl@7x\" x=\"70\" y=\"110\">\n" +
     "    <value name=\"PREDICATE\">\n" +
     "      <block type=\"prolog_predicate\" id=\"dx(MzKz=j@|lk:*9X,.T\">\n" +
@@ -1102,7 +1102,7 @@ PrologParser.EXAMPLES['Listen-Verkettung'] = "<xml xmlns=\"https://developers.go
     "  </block>\n" +
     "</xml>";
 
-PrologParser.EXAMPLES['Listen-Umkehrfunktion'] = "<xml xmlns=\"https://developers.google.com/blockly/xml\">\n" +
+PrologParser.EXAMPLES['Función de inversión de lista'] = "<xml xmlns=\"https://developers.google.com/blockly/xml\">\n" +
     "  <block type=\"prolog_rule\" id=\"=GV#W]oq(X)|AE02dDLR\" collapsed=\"true\" x=\"50\" y=\"30\">\n" +
     "    <comment pinned=\"false\" h=\"80\" w=\"160\">Describe this rule...</comment>\n" +
     "    <statement name=\"INPUT_HEAD\">\n" +

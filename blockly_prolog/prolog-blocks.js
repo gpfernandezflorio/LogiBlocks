@@ -6,22 +6,22 @@ Blockly.Blocks['prolog_fact'] = {
         this.setColour('#648bb1');
         this.setPreviousStatement(true, ['MainEditor', 'BlockedNesting']);
         this.setNextStatement(true, ['MainEditor', 'BlockedNesting']);
-        this.setTooltip('Ein einfacher Fakt, welcher aus einem Funktor und mehreren Termen besteht.');
+        this.setTooltip('Un hecho simple que consta de una relación y varios términos.');
         this.setInputsInline(true);
-        this.appendDummyInput().appendField('Fakt');
+        this.appendDummyInput().appendField('Hecho');
         this.appendValueInput('PREDICATE');
         this.appendStatementInput('FACT_ARGS').setCheck('BlockedNesting');
-        this.setHelpUrl("https://www.tinohempel.de/info/info/prolog/fakten.htm");
+        // this.setHelpUrl("https://www.tinohempel.de/info/info/prolog/fakten.htm");
     }
 };
 
 Blockly.Blocks['prolog_constant_input'] = {
     init: function () {
         this.setColour('#54a833');
-        this.setHelpUrl("https://www.tinohempel.de/info/info/prolog/fakten.htm");
+        // this.setHelpUrl("https://www.tinohempel.de/info/info/prolog/fakten.htm");
         this.setOutput(true, null);
-        this.setTooltip('Konstanten beginnen stets mit einem Kleinbuchstaben und dürfen einen Unterstrich enthalten (jedoch nicht am Anfang). Sie können bei Bedarf auch nur aus Zahlen bestehen.');
-        let textInput = new PrologParser.DynamicFieldTextInput('konstante', 'Constant', this);
+        this.setTooltip('Las constantes siempre comienzan con una letra minúscula y pueden contener un guión bajo (pero no al principio). También pueden consistir únicamente en números si es necesario.');
+        let textInput = new PrologParser.DynamicFieldTextInput('constante', 'Constant', this);
         this.appendDummyInput('DUMMY_INPUT')
             .appendField(textInput, 'CONSTANT_NAME');
     }
@@ -30,9 +30,9 @@ Blockly.Blocks['prolog_constant_input'] = {
 Blockly.Blocks['prolog_variable_input'] = {
     init: function () {
         this.setColour('#c54717');
-        this.setHelpUrl("https://www.tinohempel.de/info/info/prolog/fakten.htm");
+        // this.setHelpUrl("https://www.tinohempel.de/info/info/prolog/fakten.htm");
         this.setOutput(true, null);
-        this.setTooltip('Variablen dürfen nur mit einem Großbuchstaben oder einem Unterstrich beginnen.');
+        this.setTooltip('Las variables sólo pueden comenzar con una letra mayúscula o un guión bajo.');
         let textInput = new PrologParser.DynamicFieldTextInput('Variable', 'Variable', this);
         this.appendDummyInput('DUMMY_INPUT')
             .appendField(textInput, 'VARIABLE_NAME');
@@ -42,20 +42,20 @@ Blockly.Blocks['prolog_variable_input'] = {
 Blockly.Blocks['prolog_operation'] = {
     init: function () {
         this.setColour('#767e9b');
-        this.setHelpUrl("https://www.tinohempel.de/info/info/prolog/arithmetik.htm");
-        this.setTooltip('Der Operationsblock ist Grundlage für jede mathematische Operation.');
+        // this.setHelpUrl("https://www.tinohempel.de/info/info/prolog/arithmetik.htm");
+        this.setTooltip('El bloque de operaciones es la base de toda operación matemática.');
         this.setPreviousStatement(true, ['MainEditor', 'BlockedNesting']);
         this.setNextStatement(true, ['MainEditor', 'BlockedNesting']);
         this.setInputsInline(false);
-        this.appendValueInput('OP_ARGS').appendField('Operation').setCheck('MathOperation');
+        this.appendValueInput('OP_ARGS').appendField('Operación').setCheck('MathOperation');
     }
 };
 
 Blockly.Blocks['prolog_math_operation'] = {
     init: function () {
         this.setColour('#868da8');
-        this.setHelpUrl("https://www.tinohempel.de/info/info/prolog/arithmetik.htm");
-        this.setTooltip('Zum Berechnen von mathematischen Operationen.');
+        // this.setHelpUrl("https://www.tinohempel.de/info/info/prolog/arithmetik.htm");
+        this.setTooltip('Para calcular operaciones matemáticas.');
         this.setInputsInline(true);
         this.setOutput(true, null);
         this.appendValueInput('FIRST_ARG');
@@ -65,7 +65,7 @@ Blockly.Blocks['prolog_math_operation'] = {
                 ["-", "MINUS"],
                 ["/", "DIV"],
                 ["\u00D7", "MULTI"],
-                ["mod", "MOD"]
+                ["módulo", "MOD"]
             ]), 'OPERATOR');
         this.appendValueInput('SECOND_ARG');
     }
@@ -76,21 +76,21 @@ Blockly.Blocks['prolog_arithmetic_operation'] = {
         this.setColour('#868da8');
         this.setInputsInline(true);
         this.setOutput(true, null);
-        this.setHelpUrl("https://www.tinohempel.de/info/info/prolog/arithmetik.htm");
-        this.setTooltip('Mit diesem Block können Vergleiche ausgeführt werden.');
+        // this.setHelpUrl("https://www.tinohempel.de/info/info/prolog/arithmetik.htm");
+        this.setTooltip('Se pueden realizar comparaciones utilizando este bloque.');
         this.appendValueInput('FIRST_ARG');
         this.appendDummyInput()
             .appendField(new Blockly.FieldDropdown([
-                ["=", "EQ"],
-                ["\\=", "NEQ"],
-                ["<", "LT"],
-                ["=<", "LTE"],
-                [">", "GT"],
-                [">=", "GTE"],
-                ["==", "IDT"],
-                ["\\==", "NIDT"],
-                ["=:=", "NUMIDT"],
-                ["=\\=", "NUMNIDT"]
+                ["unifica con", "EQ"],
+                ["no unifica con", "NEQ"],
+                ["es menor a", "LT"],
+                ["es menor o igual a", "LTE"],
+                ["es mayor a", "GT"],
+                ["es mayor o igual a", "GTE"],
+                ["es igual a", "IDT"],
+                ["es distinto a", "NIDT"],
+                ["vale lo mismo que", "NUMIDT"],
+                ["no vale lo mismo que", "NUMNIDT"]
             ]), 'OPERATOR');
         this.appendValueInput('SECOND_ARG');
     }
@@ -99,12 +99,13 @@ Blockly.Blocks['prolog_arithmetic_operation'] = {
 Blockly.Blocks['prolog_is_operation']= {
     init: function () {
         this.setColour('#868da8');
-        this.setHelpUrl("https://www.tinohempel.de/info/info/prolog/arithmetik.htm");
-        this.setTooltip('Der is-Operator wertet den rechten Ausdruck aus und weist ihn der linken Zuweisungsvariablen zu.');
+        // this.setHelpUrl("https://www.tinohempel.de/info/info/prolog/arithmetik.htm");
+        this.setTooltip('Este operador evalúa la expresión derecha y la asigna a la variable de asignación izquierda.');
         this.setInputsInline(true);
         this.setOutput(true, null);
+        this.appendDummyInput().appendField('unificar');
         this.appendValueInput('FIRST_ARG');
-        this.appendDummyInput().appendField('is');
+        this.appendDummyInput().appendField('con');
         this.appendValueInput('SECOND_ARG');
     }
 };
@@ -112,13 +113,13 @@ Blockly.Blocks['prolog_is_operation']= {
 Blockly.Blocks['prolog_constant'] = {
     init: function () {
         this.setColour('#54a833');
-        this.setHelpUrl("https://www.tinohempel.de/info/info/prolog/fakten.htm");
-        this.setTooltip('Konstanten beginnen stets mit einem Kleinbuchstaben und dürfen einen Unterstrich enthalten (jedoch nicht am Anfang). Sie können bei Bedarf auch nur aus Zahlen bestehen.');
+        // this.setHelpUrl("https://www.tinohempel.de/info/info/prolog/fakten.htm");
+        this.setTooltip('Las constantes siempre comienzan con una letra minúscula y pueden contener un guión bajo (pero no al principio). También pueden consistir únicamente en números si es necesario.');
         this.setPreviousStatement(true, ['MainEditor', 'BlockedNesting']);
         this.setNextStatement(true, ['MainEditor', 'BlockedNesting']);
-        let textInput = new PrologParser.DynamicFieldTextInput('name', 'Constant', this);
+        let textInput = new PrologParser.DynamicFieldTextInput('constante', 'Constant', this);
         this.appendDummyInput('DUMMY_INPUT')
-            .appendField('Konstante')
+            .appendField('Constante')
             .appendField(textInput, 'CONSTANT_NAME');
     }
 };
@@ -126,12 +127,12 @@ Blockly.Blocks['prolog_constant'] = {
 Blockly.Blocks['prolog_predicate'] = {
     init: function () {
         this.setColour('#54a833');
-        this.setHelpUrl("https://www.tinohempel.de/info/info/prolog/fakten.htm");
-        this.setTooltip('Funktoren beginnen stets mit einem Kleinbuchstaben und dürfen einen Unterstrich enthalten (jedoch nicht am Anfang).');
+        // this.setHelpUrl("https://www.tinohempel.de/info/info/prolog/fakten.htm");
+        this.setTooltip('Las relaciones siempre comienzan con una letra minúscula y pueden contener un guión bajo (pero no al principio).');
         this.setOutput(true, null);
-        let textInput = new PrologParser.DynamicFieldTextInput('name', 'Constant', this);
+        let textInput = new PrologParser.DynamicFieldTextInput('relación', 'Constant', this);
         this.appendDummyInput('DUMMY_INPUT')
-            .appendField('Funktor')
+            .appendField('Relación')
             .appendField(textInput, 'PREDICATE_NAME');
     }
 };
@@ -139,11 +140,11 @@ Blockly.Blocks['prolog_predicate'] = {
 Blockly.Blocks['prolog_variable'] = {
     init: function () {
         this.setColour('#c54717');
-        this.setHelpUrl("https://www.tinohempel.de/info/info/prolog/fakten.htm");
+        // this.setHelpUrl("https://www.tinohempel.de/info/info/prolog/fakten.htm");
         this.setPreviousStatement(true, ['MainEditor', 'BlockedNesting']);
         this.setNextStatement(true, ['MainEditor', 'BlockedNesting']);
-        this.setTooltip('Variablen dürfen nur mit einem Großbuchstaben oder einem Unterstrich beginnen.');
-        let textInput = new PrologParser.DynamicFieldTextInput('Name', 'Variable', this);
+        this.setTooltip('Las variables sólo pueden comenzar con una letra mayúscula o un guión bajo.');
+        let textInput = new PrologParser.DynamicFieldTextInput('Variable', 'Variable', this);
         this.appendDummyInput('DUMMY_INPUT')
             .appendField('Variable')
             .appendField(textInput, 'VARIABLE_NAME');
@@ -152,15 +153,15 @@ Blockly.Blocks['prolog_variable'] = {
 
 Blockly.Blocks['prolog_list'] = {
     init: function() {
-        this.setHelpUrl("http://www.tinohempel.de/info/info/prolog/index.htm");
-        this.setTooltip('Eine Liste kann alle anderen Terme enthalten. Der Separator trennt das erste Element explizit vom Rest der Liste.');
+        // this.setHelpUrl("http://www.tinohempel.de/info/info/prolog/index.htm");
+        this.setTooltip('Una lista puede contener todos los demás términos. El separador separa explícitamente el primer elemento del resto de la lista.');
         this.setPreviousStatement(true, ['MainEditor', 'BlockedNesting']);
         this.setNextStatement(true, ['MainEditor', 'BlockedNesting']);
         this.setColour('#be6b1b');
         this.appendDummyInput()
-            .appendField('Liste');
+            .appendField('Lista');
         this.appendDummyInput()
-            .appendField(new PrologParser.InfoTextField('Separator', '#FFF'))
+            .appendField(new PrologParser.InfoTextField('Separador', '#FFF'))
             .appendField(new Blockly.FieldCheckbox(false), 'VERTICAL_BAR');
         this.appendStatementInput('LIST_ARG')
             .setCheck('BlockedNesting');
@@ -175,10 +176,10 @@ Blockly.Blocks['prolog_log_operation'] = {
         this.setPreviousStatement(true, ['MainEditor', 'BlockedNesting']);
         this.setNextStatement(true, ['MainEditor', 'BlockedNesting']);
         this.appendDummyInput()
-            .appendField('Konnektor: ')
+            .appendField('Conector: ')
             .appendField(new Blockly.FieldDropdown([
-                ["and", "AND"],
-                ["or", "OR"]
+                ["y", "AND"],
+                ["o", "OR"]
             ]), 'OPERATOR');
         this.appendStatementInput('ARGS');
     }
@@ -186,12 +187,12 @@ Blockly.Blocks['prolog_log_operation'] = {
 
 Blockly.Blocks['prolog_rule_head_fact'] = {
     init: function () {
-        this.setHelpUrl("https://www.tinohempel.de/info/info/prolog/regeln.htm");
+        // this.setHelpUrl("https://www.tinohempel.de/info/info/prolog/regeln.htm");
         this.setColour('#0f9aa6');
         this.setPreviousStatement(true);
-        this.setTooltip('Ein einfacher Fakt, welches aus einer Relation und einem oder mehreren Termen besteht.');
+        this.setTooltip('Un hecho simple que consta de una relación y uno o más términos.');
         this.setInputsInline(true);
-        this.appendDummyInput().appendField('Fakt');
+        this.appendDummyInput().appendField('Hecho');
         this.appendValueInput('PREDICATE');
         this.appendStatementInput('FACT_ARGS').setCheck('BlockedNesting');
         this.setDeletable(false);
@@ -201,16 +202,16 @@ Blockly.Blocks['prolog_rule_head_fact'] = {
 
 Blockly.Blocks['prolog_rule_body_con'] = {
     init: function () {
-        this.setHelpUrl("https://www.tinohempel.de/info/info/prolog/regeln.htm");
+        // this.setHelpUrl("https://www.tinohempel.de/info/info/prolog/regeln.htm");
         this.setColour('#0f9aa6');
         this.setPreviousStatement(true);
         this.setDeletable(false);
         this.setMovable(false);
         this.appendDummyInput()
-            .appendField('Rumpf: ')
+            .appendField('Condición: ')
             .appendField(new Blockly.FieldDropdown([
-                ["and", "AND"],
-                ["or", "OR"]
+                ["y", "AND"],
+                ["o", "OR"]
             ]), 'OPERATOR');
         this.appendStatementInput('ARGS');
     }
@@ -218,16 +219,16 @@ Blockly.Blocks['prolog_rule_body_con'] = {
 
 Blockly.Blocks['prolog_query_body'] = {
     init: function () {
-        this.setHelpUrl("https://www.tinohempel.de/info/info/datenbanken_prolog/abfragen_I.htm");
+        // this.setHelpUrl("https://www.tinohempel.de/info/info/datenbanken_prolog/abfragen_I.htm");
         this.setColour(240);
         this.setPreviousStatement(true);
         this.setDeletable(false);
         this.setMovable(false);
         this.appendDummyInput()
-            .appendField('Was soll geprüft werden?')
+            .appendField('¿Qué se debe comprobar?')
             .appendField(new Blockly.FieldDropdown([
-                ["and", "AND"],
-                ["or", "OR"]
+                ["y", "AND"],
+                ["o", "OR"]
             ]), 'OPERATOR');
         this.appendStatementInput('ARGS');
     }
@@ -235,13 +236,13 @@ Blockly.Blocks['prolog_query_body'] = {
 
 Blockly.Blocks['prolog_rule'] = {
     init: function() {
-        this.setHelpUrl("https://www.tinohempel.de/info/info/prolog/regeln.htm");
-        this.setTooltip('Regeln definieren bedingte Beziehungen zwischen Fakten.');
+        // this.setHelpUrl("https://www.tinohempel.de/info/info/prolog/regeln.htm");
+        this.setTooltip('Las reglas definen relaciones condicionales entre hechos.');
         this.setPreviousStatement(true, ['MainEditor']);
         this.setNextStatement(true, ['MainEditor']);
-        this.setCommentText('Describe this rule...');
+        this.setCommentText('Describí esta regla ...');
         this.appendDummyInput()
-            .appendField('Regel');
+            .appendField('Regla');
         this.appendStatementInput('INPUT_HEAD')
             .setCheck("prolog_fact");
 
@@ -250,15 +251,14 @@ Blockly.Blocks['prolog_rule'] = {
 
         this.setColour('#0f97a3');
         this.setInputsInline(false);
-        this.setTooltip('Ein einfaches Faktum, welches aus einer Relation und einem oder mehreren Termen besteht.');
     }
 };
 
 Blockly.Blocks['prolog_query'] = {
     init: function() {
-        this.setHelpUrl("https://www.tinohempel.de/info/info/datenbanken_prolog/abfragen_I.htm");
+        // this.setHelpUrl("https://www.tinohempel.de/info/info/datenbanken_prolog/abfragen_I.htm");
         this.appendDummyInput("QUERY_DATA")
-            .appendField('Abfrage');
+            .appendField('Consulta');
         let block = this;
         let checkbox = new Blockly.FieldCheckbox(false, function (newValue) {
             if(PrologParser.workspace.isDragging()) return;
@@ -266,15 +266,14 @@ Blockly.Blocks['prolog_query'] = {
             if (this.textElement_) this.textElement_.style.display = this.value_ ? 'block' : 'none';
             PrologParser.changeActiveQuery(block, this.value_);
         });
-        this.appendDummyInput().appendField("| Aktiv: ")
+        this.appendDummyInput().appendField("| Activa: ")
             .appendField(checkbox, 'QUERY_ACTIVE');
         this.appendStatementInput('INPUT');
         this.setColour(240);
         this.setInputsInline(true);
         this.setPreviousStatement(true, ['MainEditor']);
         this.setNextStatement(true, ['MainEditor']);
-        this.setTooltip('Ein einfaches Faktum, welches aus einer Relation und einem oder mehreren Termen besteht.');
-        this.setHelpUrl('https://www.youtube.com/watch?v=s2_xaEvcVI0#t=319');
+        this.setTooltip('Una consulta.');
     },
     onchange: function (e) {
         //Make this block editable if its placed in the main workspace.
@@ -289,12 +288,12 @@ Blockly.Blocks['prolog_query'] = {
 
 Blockly.Blocks['prolog_cut_fail'] = {
     init: function () {
-        this.setHelpUrl("https://www.tinohempel.de/info/info/datenbanken_prolog/cut.htm");
+        // this.setHelpUrl("https://www.tinohempel.de/info/info/datenbanken_prolog/cut.htm");
         this.setColour('#48887a');
         this.setPreviousStatement(true, ['MainEditor', 'BlockedNesting']);
         this.setNextStatement(true, ['MainEditor', 'BlockedNesting']);
         this.appendDummyInput()
-            .appendField('Operator: ')
+            .appendField('Operador: ')
             .appendField(new Blockly.FieldDropdown([
                 ["Cut", "CUT"],
                 ["Fail", "FAIL"]

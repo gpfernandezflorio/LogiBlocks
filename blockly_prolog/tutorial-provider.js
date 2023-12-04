@@ -10,7 +10,7 @@ goog.provide('PrologParser.TUTORIALS');
 
 PrologParser.TUTORIALS = [];
 
-PrologParser.TUTORIALS["Fakten und Konstanten"] = {
+PrologParser.TUTORIALS["Hechos y constantes"] = {
     hints: ["Dieses Tutorial soll den Umgang mit Fakten, Konstanten und Abfragen vermitteln. Durch die sog. Fakten können Beziehungen zwischen mehreren Entitäten oder die Eigenschaften einer Entität beschrieben werden.",
         "In diesem Tutorial gibt es bereits die Fakten 'vater(karl)' und 'mutter(anna)'. Die Namen innerhalb der Fakten werden dabei durch die sog. Konstanten repräsentiert. Diese beginnen in Prolog stets mit einem Kleinbuchstaben oder bestehen nur aus Zahlen.",
         "Konstanten können zusätzlich auch einen Unterstrich enthalten, um eine bessere Lesbarkeit zu erreichen. Auch können sie aus allen anderen Sonderzeichen bestehen, dürfen dann aber auch nur eben diese enthalten.",
@@ -80,7 +80,7 @@ PrologParser.TUTORIALS["Fakten und Konstanten"] = {
     "</xml>"
 };
 
-PrologParser.TUTORIALS["Variablen"] = {
+PrologParser.TUTORIALS["Variables"] = {
     hints: ["Dieses Tutorial besteht wieder aus den Fakten 'vater' und 'mutter', soll aber nun den Umgang mit den sog. Variablen von Prolog vermitteln. Im Gegensatz zu Konstanten beginnen Variablen stets mit einem Großbuchstaben oder einem Unterstrich.",
         "Variablen dienen dazu Objekte zu deklarieren, für die bisher noch keine Namensgebung möglich ist. Ist eine Variable innerhalb einer Abfrage noch unbestimmt, versucht das System einen Variablenwert zu ermitteln, sodass eine wahre Aussage entsteht.",
         "In diesem Tutorial sollen die Fakten mittels Konstanten so erweitert werden, dass die geforderte Ausgabe entsteht."],   // Hinweise in der Tutorial-Box
@@ -161,7 +161,7 @@ PrologParser.TUTORIALS["Variablen"] = {
     "</xml>"
 };
 
-PrologParser.TUTORIALS["Anonyme Variablen"] = {
+PrologParser.TUTORIALS["Variables anónimas"] = {
     hints: ["In diesem Tutorial wird die sog. anonyme Variable vorgestellt, die aus einem einzelnen Unterstrich besteht. Man benutzt sie, wenn man eine neue Variable erstellen müsste, die jedoch im weiteren Verlauf des Programmes gar nicht mehr genutzt wird.",
     "Ist die anonyme Variable innerhalb einer Abfrage platziert, wird sie bei der Ausführung nicht ermittelt, sondern schlicht ignoriert. In diesem Tutorial sollen Informationen über das Buch von 'max mustermann' ausgegeben werden.",
     "Dazu soll der 'book'-Fakt mit Konstanten so erweitertert werden, dass die gesuchte Ausgabe entsteht. Die Konstanten 'max' und 'mustermann' werden wegen der anonymen Variablen nicht mit ausgegeben."],   // Hinweise in der Tutorial-Box
@@ -243,7 +243,7 @@ PrologParser.TUTORIALS["Anonyme Variablen"] = {
     "</xml>"
 };
 
-PrologParser.TUTORIALS["Einfache Regeln"] = {
+PrologParser.TUTORIALS["Reglas simples"] = {
     hints: ["Regeln sind ein wichtigtes Grundelement von Prolog. Durch sie können bedingte Beziehungen zwischen mehreren Fakten definiert werden. Sie bestehen aus einem Regelkopf, der in diesem Editor stets einen Fakt enthält und einem Rumpf.",
     "Der Fakt im Regelkopf gilt, sobald die Bedingungen im Rumpf wahr sind.  Letztere können auf Wunsch durch Kommata, wenn alle Bedingungen gelten müssen, oder durch Semikolons, falls nur mindestens eine Bedingung wahr sein muss, getrennt werden.",
     "In diesem Tutorial soll eine Regel vervollständigt werden, die aussagen soll, dass jemand der Musik hört auch gute Laune hat. Dadurch muss in diesm Fall eine Variable eingeführt werden, damit dies sowohl für Anna, als auch für Christina gilt."],   // Hinweise in der Tutorial-Box
@@ -405,7 +405,7 @@ PrologParser.TUTORIALS["Einfache Regeln"] = {
     "</xml>"
 };
 
-PrologParser.TUTORIALS["Transitive Regeln"] = {
+PrologParser.TUTORIALS["Reglas transitivas"] = {
     hints: ["In diesem Tutorial soll wieder eine einfache Regel implementiert werden, die dieses mal jedoch Transitivität nutzt.",
     "OpaVon ist dann wahr, wenn jemand einen Vater hat, der von jemandem anderes das Kind ist. Um diese Regel zu realisieren, müssen mindestens 3 Variablen eingesetzt werden."],   // Hinweise in der Tutorial-Box
     expected_query: "A = anna, B = frank ;",      //Die erwartete Ausgabe, um das nächste Tutorial zu starten.
@@ -544,7 +544,7 @@ PrologParser.TUTORIALS["Transitive Regeln"] = {
     "</xml>"
 };
 
-PrologParser.TUTORIALS["Cut und Fail"] = {
+PrologParser.TUTORIALS["Cut y Fail"] = {
     hints: ["Mit Cut stellt Prolog ein nullstelliges Prädikat zur Verfügung, durch welches alle Alternativpunkte gelöscht werden und die Suche beendet wird.",
     "Fail dagegen ist ebenfalls ein nullstelliges Prädikat, welches bei der Ausführung scheitert. Cut und Fail zusammen werden häufig benutzt, um bestimmte Lösungen auszuschließen.", "" +
         "In diesem Tutorial soll ausgeschlossen werden, dass ein Ausländer auch ein durchschnittlicher Steuerzahler ist. Dazu müssen Cut und Fail entsprechend in die vorgegebene Regel eingebaut werden."],   // Hinweise in der Tutorial-Box
@@ -781,7 +781,7 @@ PrologParser.TUTORIALS["Cut und Fail"] = {
     "</xml>"
 };
 
-PrologParser.TUTORIALS["Der Is-Operator"] = {
+PrologParser.TUTORIALS["El operador de unificación"] = {
     hints: ["Dieses Tutorial veranschaulicht den Umgang mit dem Is-Operator, sowie den Nutzen des Operationsblocks. Um im grafischen Editor eine mathematische Operation zu implementieren, muss zunächst ein Operationsblock platziert werden.",
     "Am Operationsblock können verschiedene mathematische Operationen angehängt werden. Diese sind durch ihr seitliches Verbindungsstück gekennzeichnet und werden außerdem in den folgenden Tutorials weiter vorgestellt.",
     "Innerhalb einer mathematischen Operationen können Variablen (zur Deklarierung von Unbekannten) und Konstanten (zur Initialisierung von Zahlen) genutzt werden. Für diese gibt es jeweils einen zusätzlichen Block mit einem seitlichen Verbindungsstück.",
@@ -875,7 +875,7 @@ PrologParser.TUTORIALS["Der Is-Operator"] = {
     "</xml>"
 };
 
-PrologParser.TUTORIALS["Grundrechenoperationen"] = {
+PrologParser.TUTORIALS["Operaciones aritméticas básicas"] = {
     hints: ["In diesem Tutorial sollen die Grundrechenoperationen von Prolog vorgestellt werden. Prolog bietet Addition, Subtraktion, Multiplikation, Division und die Division mit Rest (Modulo).",
     "Dazu sind bereits einige Operationsblöcke gegeben, die den vier Variablen (A, B, C und D) verschiedene Ergebnisse zuordnen sollen. Um dieses Tutorial zu absolvieren sollen die mathematischen Operationen vervollständigt werden.",
     "Um Zahlen in die Operationen hinzuzufügen, können die Konstantenblöcke mit einem seitlichen Verbindungsstück aus der Toolbox benutzt werden. Es gibt natürlich verschiedene Wege die nachfolgende Lösung zu generieren."],   // Hinweise in der Tutorial-Box
@@ -1109,7 +1109,7 @@ PrologParser.TUTORIALS["Grundrechenoperationen"] = {
     "</xml>"
 };
 
-PrologParser.TUTORIALS["Vergleiche"] = {
+PrologParser.TUTORIALS["Comparaciones"] = {
     hints: ["Dieses Tutorial soll die Vergleichsoperatoren von Prolog vorstellen. Prolog bietet neben den typischen Operatoren, wie beispielsweise Größer- und Kleinergleich (<= bzw. >=) oder der klassischen Gleichheit (=), auch eigene Opratoren an.", "" +
     "Mit '=:=' kann auf numerische Gleichheit geprüft werden. Im Gegensatz zur einfachen Gleicheit (=) führt dieser Operator den arithmetischen Ausdruck beider Seiten vorher aus. Es gilt also nicht '2 + 2 = 4', wohl aber '2 + 2 =:= 4'. Das Gegenstück dazu ist die numerische Ungleichheit '=\\='.",
     "Ein weiterer Operator ist die Musterübereinstimmung mittels '==' bzw. '\\==' als Gegenstück. Dieser wertet die Ausdrücke der beiden Seiten ebenfalls nicht aus, sondern prüft ledigleich, ob das Muster der beiden Seiten identisch ist. Beispielsweise gilt '1+2 == 1+2', jedoch nicht '3 == 1+3'."],   // Hinweise in der Tutorial-Box
@@ -1352,7 +1352,7 @@ PrologParser.TUTORIALS["Vergleiche"] = {
     "</xml>"
 };
 
-PrologParser.TUTORIALS["Regeln und Artihmetik"] = {
+PrologParser.TUTORIALS["Reglas y artimética"] = {
     hints: ["In diesem Tutorial soll die Regel 'add_three_and_double' implementiert werden. Wie der Name schon sagt soll diese zu einer Variablen (X) drei hinzuaddieren und die Summe anschlißend verdoppeln.",
         "Dazu ist bereits der Regelkopf und ein Teil des Rumpfes gegeben. Grundlage für die Implementierung ist ein Operationsblock im Rumpf. Durch den Is-Operator kann das berechnete Produkt einer linksstehnden Variablen zugeordnet werden.",
     ],   // Hinweise in der Tutorial-Box
@@ -1475,7 +1475,7 @@ PrologParser.TUTORIALS["Regeln und Artihmetik"] = {
     "</xml>"
 };
 
-PrologParser.TUTORIALS["Einfache Listen"] = {
+PrologParser.TUTORIALS["Listas simples"] = {
     hints: ["Listen sind geordnete Folgen von Elementen in beliebiger Länge. Eine Liste kann beliebige Terme enthalten und kann daher natürlich auch selber wieder Listen enthalten.",
         "Listen haben entweder keine Elemente (die sog. leeren Listen) oder sie bestehen aus zwei Komponenten: Dem Kopfelement und einer Restliste. In diesem Tutorial sollst du die gegebene Liste so erweitern, dass die geforderte Ausgabe entsteht."
     ],   // Hinweise in der Tutorial-Box
@@ -1538,7 +1538,7 @@ PrologParser.TUTORIALS["Einfache Listen"] = {
     "</xml>"
 };
 
-PrologParser.TUTORIALS["Verschachtelte Listen"] = {
+PrologParser.TUTORIALS["Listas anidadas"] = {
     hints: ["Mit dem Listenseparator ist ein Element gegeben, mit dem genau definiert werden kann, welche Elemente in der Liste als Kopfelemente zugeteilt werden sollen. Der Listenseparator besteht aus einem einzelnen vertikalen Strich.",
         "In diesem Tutorial soll für X das entsprechende Kopfelement ausgegeben werden. Y dagegen soll die Restliste sein, die auch selbst wieder Listen enthält."
     ],   // Hinweise in der Tutorial-Box

@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="author" content="Niklas Holtz">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Blockly Prolog</title>
+    <title>LogiBlocks</title>
     <link rel="icon" href="media/blockly_prolog.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="blockly_prolog/style.css" media="screen" />
     <!-- Google Blockly -->
     <script src="google_blockly/blockly_compressed.js"></script>
     <script src="google_blockly/blocks_compressed.js"></script>
-    <script src="google_blockly/msg/js/de.js"></script>
+    <script src="google_blockly/msg/js/es.js"></script>
     <!-- BlocklyProlog -->
     <script src="blockly_prolog/blockly-extensions.js"></script>
     <script src="blockly_prolog/prolog-parser.js"></script>
@@ -42,34 +42,34 @@
 <body>
     <div id="sidebar" class="sidebar sidebar-collapsed">
         <div id="sidebar-content">
-            <div id="app-title"><span class="blockly-color">Blockly</span><br>Prolog</div>
+            <div id="app-title"><span class="blockly-color">Logi</span>Blocks</div>
             <div class="collapsible-menu">
-                <p class="sidebar-header">Beispiele</p>
+                <p class="sidebar-header">Ejemplos</p>
                 <div class="expanded-content" id="example-list1"></div>
                 <div class="collapsed-content" id="example-list2"></div>
-                <a href="#" class="expand-button upturned">Weitere anzeigen</a>
+                <a href="#" class="expand-button upturned">Mostrar más</a>
             </div>
-            <p class="sidebar-header">Tutorials</p>
+            <p class="sidebar-header">Tutoriales</p>
             <div class="collapsible-menu">
-                <a href="#" class="expand-button">Fakten und Abfragen</a>
+                <a href="#" class="expand-button">Hechos y consultas</a>
                 <div id="tutorial-container-0" class="collapsed-content">
 
                 </div>
             </div>
             <div class="collapsible-menu">
-                <a href="#" class="expand-button">Regeln</a>
+                <a href="#" class="expand-button">Reglas</a>
                 <div id="tutorial-container-2" class="collapsed-content">
 
                 </div>
             </div>
             <div class="collapsible-menu">
-                <a href="#" class="expand-button">Arithmetik</a>
+                <a href="#" class="expand-button">Aritmética</a>
                 <div id="tutorial-container-1" class="collapsed-content">
 
                 </div>
             </div>
             <div class="collapsible-menu">
-                <a href="#" class="expand-button">Listen</a>
+                <a href="#" class="expand-button">Listas</a>
                 <div id="tutorial-container-3" class="collapsed-content">
 
                 </div>
@@ -82,12 +82,12 @@
     <div id="sidebar-blur"></div>
     <div id="page-content">
         <div class="topnav">
-            <button id="menu-button" class="collapsed-menu-button">Menü</button>
+            <button id="menu-button" class="collapsed-menu-button">Menú</button>
             <div id="right-nav">
-                <input type="text" id="program-name" placeholder="Programmname"/>
+                <input type="text" id="program-name" placeholder="Proyecto sin nombre"/>
                 <input id="file-input" type="file" name="name" style="display: none;" />
-                <button id="save-button">Speichern</button>
-                <button id="load-button">Laden</button>
+                <button id="save-button">Guardar</button>
+                <button id="load-button">Abrir</button>
             </div>
         </div>
         <div id="blockly-editor">
@@ -96,7 +96,7 @@
                 <div id="blocklyDiv" style="position: absolute"></div>
                 <xml id="toolbox" style="display: none">
 
-                    <label text="Basics" web-class="rule-sep"></label>
+                    <label text="Básicos" web-class="rule-sep"></label>
 
                     <block type="prolog_fact">
                         <value name="PREDICATE">
@@ -104,7 +104,7 @@
                         </value>
                         <value name="FACT_ARGS">
                             <shadow type="info_block_statement">
-                                <field name="TEXT">Terme ..</field>
+                                <field name="TEXT">Términos ...</field>
                             </shadow>
                         </value>
                     </block>
@@ -113,17 +113,17 @@
                     <block type="prolog_list">
                         <value name="LIST_HEAD">
                             <shadow type="info_block_statement">
-                                <field name="TEXT">Erstes Element ..</field>
+                                <field name="TEXT">Primer elemento ...</field>
                             </shadow>
                         </value>
                         <value name="LIST_TAIL">
                             <shadow type="info_block_statement">
-                                <field name="TEXT">Rest der Liste ..</field>
+                                <field name="TEXT">Resto de la lista ...</field>
                             </shadow>
                         </value>
                     </block>
 
-                    <label text="Mathematische Operationen" web-class="rule-sep"></label>
+                    <label text="Operaciones matemáticas" web-class="rule-sep"></label>
 
                     <block type="prolog_operation">
 
@@ -170,7 +170,7 @@
                     <block type="prolog_constant_input"></block>
                     <block type="prolog_variable_input"></block>
 
-                    <label text="Regeln und Abfragen" web-class="rule-sep"></label>
+                    <label text="Reglas y consultas" web-class="rule-sep"></label>
 
                     <block type="prolog_rule">
                         <value name="INPUT_HEAD">
@@ -180,7 +180,7 @@
                                 </value>
                                 <value name="FACT_ARGS">
                                     <shadow type="info_block_statement">
-                                        <field name="TEXT">Dieser Fakt gilt ..</field>
+                                        <field name="TEXT">Este hecho es cierto ...</field>
                                     </shadow>
                                 </value>
                             </block>
@@ -189,7 +189,7 @@
                             <block type="prolog_rule_body_con">
                                 <value name="ARGS">
                                     <shadow type="info_block_statement">
-                                        <field name="TEXT">Wenn erfüllt ist ..</field>
+                                        <field name="TEXT">cuando se cumple ...</field>
                                     </shadow>
                                 </value>
                             </block>
@@ -209,23 +209,23 @@
             <div id="layout-right">
                 <!-- Tutorial Window -->
                 <div id="tutorial-window">
-                    <button id="prevHint"><span class="big-sign"><</span><br>Zurück</button>
+                    <button id="prevHint"><span class="big-sign"><</span><br>Atrás</button>
                     <div id="tutorial-hint">Tutorial
                         <p id="tutorial-text"></p>
                     </div>
-                    <button id="nextHint"><span class="big-sign">></span><br>Weiter</button>
+                    <button id="nextHint"><span class="big-sign">></span><br>Más</button>
                 </div>
                 <!-- Generierter Code & Console-->
                 <table id="tableRight">
                     <tr id="tabRow">
                         <td id="tab_Prolog" class="tabon">Prolog</td>
                         <td id="tab_XML" class="taboff">XML</td>
-                        <td id="tab_DerivationTree" class="taboff">Ableitungsbaum</td>
+                        <td id="tab_DerivationTree" class="taboff">Árbol de derivación</td>
                         <td class="buttonsRight">
-                            <button id="endTutorialButton">Tutorial beenden</button>
-                            <button id="nextTutorialButton">Nächstes Tutorial</button>
-                            <button id="trashButton">Löschen</button>
-                            <button id="runButton" class="primary">Ausführen</button>
+                            <button id="endTutorialButton">Finalizar tutorial</button>
+                            <button id="nextTutorialButton">Siguiente tutorial</button>
+                            <button id="trashButton">Borrar</button>
+                            <button id="runButton" class="primary">Ejecutar</button>
                         </td>
                     </tr>
                     <tr>

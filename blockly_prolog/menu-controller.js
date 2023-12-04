@@ -25,7 +25,7 @@ PrologParser.MenuController.prototype.init = function () {
 PrologParser.MenuController.prototype.openSidebar = function () {
     let button = document.getElementById('menu-button');
     button.className = 'expanded-menu-button';
-    button.innerText = 'Zurück';
+    button.innerText = 'Atrás';
     let sidenav = document.getElementById('sidebar');
     if(sidenav.className === 'sidebar sidebar-collapsed') this.collapsed = false;
     sidenav.className = 'sidebar sidebar-expanded';
@@ -38,7 +38,7 @@ PrologParser.MenuController.prototype.openSidebar = function () {
 PrologParser.MenuController.prototype.closeSidebar = function () {
     let button = document.getElementById('menu-button');
     button.className = 'collapsed-menu-button';
-    button.innerText = 'Menü';
+    button.innerText = 'Menú';
     let sidenav = document.getElementById('sidebar');
     if(sidenav.className !== 'sidebar sidebar-collapsed') this.collapsed = true;
     sidenav.className = 'sidebar sidebar-collapsed';
@@ -66,7 +66,7 @@ PrologParser.MenuController.prototype.initExpandButtons = function () {
                 if(button.classList.contains('upturned')) {
                     button.classList.remove('expand-button');
                     button.classList.add('expanded-button-expanded');
-                    button.innerHTML = 'Weniger anzeigen';
+                    button.innerHTML = 'Mostrar menos';
                 }
             } else {
                 content.className = 'collapsed-content';
@@ -74,7 +74,7 @@ PrologParser.MenuController.prototype.initExpandButtons = function () {
                 if(button.classList.contains('upturned')) {
                     button.classList.add('expand-button');
                     button.classList.remove('expanded-button-expanded');
-                    expandButtons[0].innerHTML = 'Weitere (' + self.more_examples_counter + ') anzeigen';
+                    expandButtons[0].innerHTML = 'Mostrar ' + self.more_examples_counter + ' más';
                 }
             }
         })
@@ -115,7 +115,7 @@ PrologParser.MenuController.prototype.initExamples = function () {
         let expandButtons = document.getElementsByClassName('upturned');
         expandButtons[0].style.display = 'none';
     } else {
-        expandButtons[0].innerHTML = 'Weitere (' + this.more_examples_counter + ') anzeigen';
+        expandButtons[0].innerHTML = 'Mostrar ' + this.more_examples_counter + ' más';
     }
 };
 
