@@ -72,7 +72,7 @@ PrologParser.discard = function(callback) {
         callback();
     }
     if(count < 2) return execute();
-    alertify.confirm(Blockly.Msg['DELETE_ALL_BLOCKS'].replace('%1', count), execute).set({labels:{ok:'Löschen', cancel: 'Abbrechen'}, title:"Workspace leeren?"});
+    alertify.confirm(Blockly.Msg['DELETE_ALL_BLOCKS'].replace('%1', count), execute).set({labels:{ok:'Aceptar', cancel: 'Cancelar'}, title:"¿Borrar todo?"});
 };
 
 PrologParser.init = function() {
